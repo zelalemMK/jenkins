@@ -4,6 +4,9 @@ pipeline {
         stage('build') {
             steps {
                 sh 'go version'
+                sh '''
+                echo "whats up bitches"
+                '''
             }
         }
     }
