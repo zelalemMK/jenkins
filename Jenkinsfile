@@ -19,13 +19,13 @@ pipeline {
                 }
             }
         }
-        post {
-            always {
+    }
+    post {
+        always {
                 echo "always Ill remember you"
             }
-            success {
+        success {
                 echo "success"
             }
         }
-    }
 }
