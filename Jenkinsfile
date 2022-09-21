@@ -9,5 +9,23 @@ pipeline {
                 '''
             }
         }
+        stage('wap') {
+            steps {
+                retry(3) {
+                    sh './wap.sh'
+                }
+                timeout(time:3, unit:'MINUTES') {
+                    sh './wap.sh'
+                }
+            }
+        }
+        post {
+            always {
+                echo "always Ill remember you"
+            }
+            success {
+                echo "success"
+            }
+        }
     }
 }
